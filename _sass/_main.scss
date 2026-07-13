@@ -1,38 +1,61 @@
 @charset "utf-8";
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Righteous&display=swap");
-$family-sans-serif: "Open Sans", sans-serif;
-$family-serif: "Righteous", cursive;
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Nunito+Sans:wght@400;600;700&display=swap");
+$family-sans-serif: "Nunito Sans", sans-serif;
+$family-serif: "Fraunces", serif;
 $family-primary: $family-sans-serif;
 $family-secondary: $family-serif;
 $title-family: $family-secondary;
 
-// Colours
-$primary: #4fa6a3 !default;
-$dark: #363636;
-$light: #f6f6f6;
-$white: #ffffff;
+// Colours - a calm Pacific North-western palette: evergreen forest,
+// strait blue and a touch of signal-lantern yellow.
+$forest: #3f6f52;
+$pine: #1f3a34;
+$pacific: #2f6690;
+$mist-blue: #6fa8b5;
+$signal-yellow: #d9a441;
+$fog: #e9efe4;
+$paper: #f8f7f2;
+$charcoal: #2a332c;
+
+// Rail motif colours, used sparingly for subtle railway details
+$rail-steel: #3d6b78;
+$rail-tie: rgba(31, 58, 52, 0.55);
+
+$primary: $forest;
+$link: $pacific;
+$info: $mist-blue;
+$warning: $signal-yellow;
+$dark: $pine;
+$light: $fog;
+$white: $paper;
+$text: $charcoal;
+
+// Bulma's "scheme" colours (page background, card background, etc.) are
+// keyed off their own internal defaults rather than $white, so they need
+// to be set directly for the warm paper tone to take effect everywhere.
+$scheme-main: $paper;
+$scheme-main-bis: #f2f1ea;
+$scheme-main-ter: #ebe9dd;
+$background: $scheme-main-ter;
 
 //Cards
-$card-radius: 2px;
-// $card-shadow: none;
-// $card-footer-border-top: none;
-// $card-background-color: $light;
+$card-radius: 10px;
+$card-shadow: 0 2px 12px rgba($pine, 0.1);
 
 // Pagination
-// $pagination-focus-border-color: $dark;
-// $pagination-current-color: $white;
-// $pagination-current-background-color: $dark;
-// $pagination-current-border-color: $dark;
+$pagination-current-background-color: $pacific;
+$pagination-current-border-color: $pacific;
 
 // Radius
-$radius: 2px;
-$radius-large: 2px;
-$radius-small: 2px;
+$radius: 6px;
+$radius-large: 10px;
+$radius-small: 4px;
 
 @import "../node_modules/bulma/sass";
 @import "../node_modules/bulma/sass/utilities/mixins";
 @import "layout";
 @import "syntax";
 @import "intro";
+@import "railway";

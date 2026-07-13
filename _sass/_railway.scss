@@ -1,0 +1,141 @@
+// Subtle Pacific North-western + railway touches.
+// Kept deliberately quiet: a line here, a ridge there.
+
+// Bulma's theme partials set the neutral "scheme" hue/saturation and the
+// page/card background lightness directly (not through !default), so a
+// Sass variable override can't reach them - only overriding the resulting
+// CSS variables can. This swaps the cold blue-grey neutral (221°) for a
+// warm, paper-toned one and softens the background off pure white.
+:root {
+  --bulma-scheme-h: 50;
+  --bulma-scheme-s: 20%;
+  --bulma-scheme-main-l: 96%;
+  --bulma-scheme-main-bis-l: 94%;
+  --bulma-scheme-main-ter-l: 91%;
+  --bulma-background-l: 91%;
+  --bulma-border-weak-l: 87%;
+  --bulma-border-l: 78%;
+}
+
+// A thin nod to a railway livery stripe under the navbar.
+.navbar {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(to right, $forest, $pacific 55%, $signal-yellow);
+  }
+}
+
+// Two rails and their sleepers, seen from above - used as a section divider.
+.rail-divider {
+  height: 16px;
+  border-top: 2px solid rgba($rail-steel, 0.4);
+  border-bottom: 2px solid rgba($rail-steel, 0.4);
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba($pine, 0.35) 0,
+    rgba($pine, 0.35) 6px,
+    transparent 6px,
+    transparent 26px
+  );
+  background-position: center;
+}
+
+// A quiet mountain ridge easing the hero photo into the page below.
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  .hero-body {
+    position: relative;
+    z-index: 2;
+  }
+
+  // A soft, misty-forest scrim so the title stays readable over any photo.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba($pine, 0.35) 0%,
+      rgba($pine, 0.5) 60%,
+      rgba($pine, 0.65) 100%
+    );
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: -1px;
+    height: 46px;
+    z-index: 1;
+    pointer-events: none;
+    background: $white;
+    clip-path: polygon(
+      0% 100%,
+      0% 62%,
+      6% 78%,
+      12% 40%,
+      19% 66%,
+      26% 30%,
+      34% 58%,
+      42% 22%,
+      50% 52%,
+      58% 18%,
+      66% 46%,
+      74% 24%,
+      82% 54%,
+      90% 28%,
+      96% 48%,
+      100% 34%,
+      100% 100%
+    );
+  }
+}
+
+// A calm, forest-to-water gradient across the top of every card.
+.card {
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, $forest, $pacific 60%, $signal-yellow);
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba($pine, 0.16);
+  }
+}
+
+.button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  color: rgba($charcoal, 0.7);
+  letter-spacing: 0.03em;
+
+  a {
+    color: inherit;
+  }
+}
