@@ -1,9 +1,9 @@
 <section
   class="hero {% if page.hero_height %} {{ page.hero_height }} {% else %} is-medium {% endif %} is-bold is-dark"
-  {% if page.image %}
-    style="background: url('{{ page.image | relative_url }}') no-repeat center center; background-size: cover;"
-  {% endif %}
 >
+  {% if page.image %}
+    {% include cover-media.html src=page.image alt=page.title class="hero-media" %}
+  {% endif %}
   <div class="hero-body">
     <div class="container">
       <h1 class="title is-2 is-family-secondary">{{ page.title }}</h1>

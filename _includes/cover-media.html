@@ -1,0 +1,19 @@
+{%- assign cover_media_ext = include.src | split: '.' | last | downcase -%}
+{%- if cover_media_ext == 'mp4' -%}
+  <video
+    {% if include.class %}class="{{ include.class }}"{% endif %}
+    autoplay
+    muted
+    loop
+    playsinline
+    {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
+  >
+    <source src="{{ include.src | relative_url }}" type="video/mp4">
+  </video>
+{%- else -%}
+  <img
+    {% if include.class %}class="{{ include.class }}"{% endif %}
+    src="{{ include.src | relative_url }}"
+    alt="{{ include.alt }}"
+  >
+{%- endif -%}

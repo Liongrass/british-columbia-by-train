@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-image">
-    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" width="100%">
+    {% include cover-media.html src=post.image alt=post.title class="card-media" %}
   </div>
   <div class="card-content">
     <div class="content">
