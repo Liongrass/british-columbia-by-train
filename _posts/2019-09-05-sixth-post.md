@@ -6,7 +6,7 @@ description: This is a post with an introduction image and text
 intro: This is the introduction text for this post. It appears large and bold at the top of the post!
 intro_image: https://picsum.photos/id/112/1200/800
 intro_image_ratio: is-16by9
-image: /img/2024-05-20_parkcar.jpg
+image: /img/2026-01-10_bulletlounge.mp4
 ---
 
 Version 0.3 allows you to provide a intro and an intro image. When creating your post add a short `intro` text an `intro_image` as a path to an image and then specify the `intro_image_ratio` which should be a [Bulma image](https://bulma.io/documentation/elements/image/) class.
